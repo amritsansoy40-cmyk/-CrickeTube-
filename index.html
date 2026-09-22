@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cricket Tube</title>
+    <title>Cricket Tube V2</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,139 +13,466 @@
 
     <!-- Header -->
     <header class="header">
+
         <div class="logo">
             🏏 Cricket Tube
         </div>
 
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <button class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </button>
+
     </header>
+
 
     <!-- Navigation -->
     <nav id="navMenu" class="nav-menu">
+
         <a href="#home">Home</a>
-        <a href="#live">Live</a>
-        <a href="#shorts">Shorts</a>
-        <a href="#matches">Matches</a>
+        <a href="#live">🔴 Live</a>
+        <a href="#shorts">🎥 Shorts</a>
+        <a href="#matches">🏆 Matches</a>
+
     </nav>
 
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <div>
-            <h1>Cricket Tube 🏏</h1>
-            <p>Live Cricket • Scores • Shorts • Match Updates</p>
 
-            <button class="primary-btn" onclick="showLiveMatches()">
-                🔴 Watch Live
-            </button>
-        </div>
-    </section>
+    <!-- Home -->
+    <main id="home">
 
-    <!-- Live Matches -->
-    <section id="live" class="section">
+        <section class="hero">
 
-        <div class="section-title">
-            <h2>🔴 Live Matches</h2>
-            <span id="liveStatus">LIVE</span>
-        </div>
+            <div class="hero-content">
 
-        <div id="liveMatches" class="match-container">
+                <p class="welcome">
+                    WELCOME TO
+                </p>
 
-            <div class="match-card">
+                <h1>
+                    Cricket Tube 🏏
+                </h1>
 
-                <div class="match-header">
-                    <span>🏏 International</span>
-                    <span class="live-dot">● LIVE</span>
-                </div>
+                <p>
+                    Live Cricket • Scores • Shorts • Match Updates
+                </p>
 
-                <h3>India 🇮🇳 vs Australia 🇦🇺</h3>
-
-                <div class="score">
-                    <strong>IND 186/4</strong>
-                    <span>18.2 Overs</span>
-                </div>
-
-                <p>Australia needs 187 runs</p>
-
-                <button class="watch-btn" onclick="watchMatch()">
-                    ▶ Watch Match
+                <button
+                    class="primary-btn"
+                    onclick="goToLive()"
+                >
+                    🔴 View Live Matches
                 </button>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
-    <!-- Shorts -->
-    <section id="shorts" class="section">
+        <!-- Live Match -->
+        <section id="live" class="section">
 
-        <div class="section-title">
-            <h2>🎥 Cricket Shorts</h2>
-        </div>
+            <div class="section-title">
 
-        <div class="shorts-container">
+                <div>
+                    <p class="small-title">
+                        LIVE NOW
+                    </p>
 
-            <div class="short-card" onclick="openShort('Best Six 🔥')">
-                <div class="short-image">🏏💥</div>
-                <h3>Best Six 🔥</h3>
-                <p>Watch cricket highlights</p>
+                    <h2>
+                        🔴 Live Matches
+                    </h2>
+                </div>
+
+                <button
+                    class="refresh-btn"
+                    onclick="refreshScores()"
+                >
+                    🔄 Refresh
+                </button>
+
             </div>
 
-            <div class="short-card" onclick="openShort('Amazing Catch 😱')">
-                <div class="short-image">🙌🏏</div>
-                <h3>Amazing Catch 😱</h3>
-                <p>Crazy cricket moments</p>
+
+            <div id="liveMatches" class="match-grid">
+
+                <!-- Match 1 -->
+                <article class="match-card">
+
+                    <div class="match-top">
+
+                        <span>
+                            🏆 International
+                        </span>
+
+                        <span class="live-badge">
+                            ● LIVE
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        🇮🇳 India
+                        <span>vs</span>
+                        🇦🇺 Australia
+                    </h3>
+
+
+                    <div class="score-box">
+
+                        <div>
+                            <strong id="indiaScore">
+                                186/4
+                            </strong>
+
+                            <small>
+                                18.2 Overs
+                            </small>
+                        </div>
+
+                        <div class="run-rate">
+                            RR 10.14
+                        </div>
+
+                    </div>
+
+
+                    <p class="match-info">
+                        India batting
+                    </p>
+
+
+                    <button
+                        class="watch-btn"
+                        onclick="watchMatch()"
+                    >
+                        ▶ Watch
+                    </button>
+
+                </article>
+
+
+                <!-- Match 2 -->
+                <article class="match-card">
+
+                    <div class="match-top">
+
+                        <span>
+                            🏆 T20
+                        </span>
+
+                        <span class="live-badge">
+                            ● LIVE
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        🇬🇧 England
+                        <span>vs</span>
+                        🇿🇦 South Africa
+                    </h3>
+
+
+                    <div class="score-box">
+
+                        <div>
+                            <strong>
+                                142/6
+                            </strong>
+
+                            <small>
+                                17.1 Overs
+                            </small>
+                        </div>
+
+                        <div class="run-rate">
+                            RR 8.27
+                        </div>
+
+                    </div>
+
+
+                    <p class="match-info">
+                        England batting
+                    </p>
+
+
+                    <button
+                        class="watch-btn"
+                        onclick="watchMatch()"
+                    >
+                        ▶ Watch
+                    </button>
+
+                </article>
+
             </div>
 
-            <div class="short-card" onclick="openShort('Fast Bowling ⚡')">
-                <div class="short-image">⚡🏏</div>
-                <h3>Fast Bowling ⚡</h3>
-                <p>Fastest cricket moments</p>
+        </section>
+
+
+        <!-- Shorts -->
+        <section id="shorts" class="section">
+
+            <div class="section-title">
+
+                <div>
+                    <p class="small-title">
+                        TRENDING
+                    </p>
+
+                    <h2>
+                        🎥 Cricket Shorts
+                    </h2>
+                </div>
+
             </div>
 
-        </div>
 
-    </section>
+            <div class="shorts-grid">
 
-    <!-- Matches -->
-    <section id="matches" class="section">
+                <article
+                    class="short-card"
+                    onclick="openShort('Amazing Six')"
+                >
 
-        <div class="section-title">
-            <h2>🏆 Matches</h2>
-        </div>
+                    <div class="short-thumbnail">
+                        🏏💥
+                    </div>
 
-        <div class="match-list">
+                    <div class="short-content">
 
-            <div class="simple-match">
-                <span>🇮🇳 India</span>
-                <strong>VS</strong>
-                <span>🇦🇺 Australia</span>
+                        <h3>
+                            Amazing Six 🔥
+                        </h3>
+
+                        <p>
+                            Cricket's biggest hits
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="short-card"
+                    onclick="openShort('Amazing Catch')"
+                >
+
+                    <div class="short-thumbnail">
+                        🙌🏏
+                    </div>
+
+                    <div class="short-content">
+
+                        <h3>
+                            Amazing Catch 😱
+                        </h3>
+
+                        <p>
+                            Incredible fielding
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="short-card"
+                    onclick="openShort('Fast Bowling')"
+                >
+
+                    <div class="short-thumbnail">
+                        ⚡🏏
+                    </div>
+
+                    <div class="short-content">
+
+                        <h3>
+                            Fast Bowling ⚡
+                        </h3>
+
+                        <p>
+                            Speed and swing
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="short-card"
+                    onclick="openShort('Best Celebration')"
+                >
+
+                    <div class="short-thumbnail">
+                        🏆🎉
+                    </div>
+
+                    <div class="short-content">
+
+                        <h3>
+                            Best Celebration 🎉
+                        </h3>
+
+                        <p>
+                            Cricket moments
+                        </p>
+
+                    </div>
+
+                </article>
+
             </div>
 
-            <div class="simple-match">
-                <span>🇬🇧 England</span>
-                <strong>VS</strong>
-                <span>🇿🇦 South Africa</span>
+        </section>
+
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <h2>
+                🔎 Find a Match
+            </h2>
+
+            <p>
+                Search teams or matches
+            </p>
+
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search India, Australia..."
+                    oninput="searchMatches()"
+                >
+
+                <button onclick="searchMatches()">
+                    Search
+                </button>
+
             </div>
 
-            <div class="simple-match">
-                <span>🇵🇰 Pakistan</span>
-                <strong>VS</strong>
-                <span>🇳🇿 New Zealand</span>
+
+            <div id="searchResult"></div>
+
+        </section>
+
+
+        <!-- Matches -->
+        <section id="matches" class="section">
+
+            <div class="section-title">
+
+                <div>
+                    <p class="small-title">
+                        FIXTURES
+                    </p>
+
+                    <h2>
+                        🏆 Matches
+                    </h2>
+                </div>
+
             </div>
 
-        </div>
 
-    </section>
+            <div class="fixture-list">
+
+                <div class="fixture">
+
+                    <div>
+                        <strong>
+                            🇮🇳 India
+                        </strong>
+
+                        <span>vs</span>
+
+                        <strong>
+                            🇦🇺 Australia
+                        </strong>
+                    </div>
+
+                    <small>
+                        Upcoming
+                    </small>
+
+                </div>
+
+
+                <div class="fixture">
+
+                    <div>
+                        <strong>
+                            🇵🇰 Pakistan
+                        </strong>
+
+                        <span>vs</span>
+
+                        <strong>
+                            🇳🇿 New Zealand
+                        </strong>
+                    </div>
+
+                    <small>
+                        Upcoming
+                    </small>
+
+                </div>
+
+
+                <div class="fixture">
+
+                    <div>
+                        <strong>
+                            🇬🇧 England
+                        </strong>
+
+                        <span>vs</span>
+
+                        <strong>
+                            🇿🇦 South Africa
+                        </strong>
+                    </div>
+
+                    <small>
+                        Completed
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
 
     <!-- Footer -->
     <footer>
-        <h3>🏏 Cricket Tube</h3>
-        <p>Live Cricket • Shorts • Scores</p>
-        <p>© 2026 Cricket Tube</p>
+
+        <h3>
+            🏏 Cricket Tube
+        </h3>
+
+        <p>
+            Your Cricket Hub
+        </p>
+
+        <p>
+            © 2026 Cricket Tube
+        </p>
+
     </footer>
+
 
     <script src="script.js"></script>
 
 </body>
-</html>
+</html> 
