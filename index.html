@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Cricket Tube</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            🏏 Cricket Tube
+        </div>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="navMenu" class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#live">Live</a>
+        <a href="#shorts">Shorts</a>
+        <a href="#matches">Matches</a>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div>
+            <h1>Cricket Tube 🏏</h1>
+            <p>Live Cricket • Scores • Shorts • Match Updates</p>
+
+            <button class="primary-btn" onclick="showLiveMatches()">
+                🔴 Watch Live
+            </button>
+        </div>
+    </section>
+
+    <!-- Live Matches -->
+    <section id="live" class="section">
+
+        <div class="section-title">
+            <h2>🔴 Live Matches</h2>
+            <span id="liveStatus">LIVE</span>
+        </div>
+
+        <div id="liveMatches" class="match-container">
+
+            <div class="match-card">
+
+                <div class="match-header">
+                    <span>🏏 International</span>
+                    <span class="live-dot">● LIVE</span>
+                </div>
+
+                <h3>India 🇮🇳 vs Australia 🇦🇺</h3>
+
+                <div class="score">
+                    <strong>IND 186/4</strong>
+                    <span>18.2 Overs</span>
+                </div>
+
+                <p>Australia needs 187 runs</p>
+
+                <button class="watch-btn" onclick="watchMatch()">
+                    ▶ Watch Match
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Shorts -->
+    <section id="shorts" class="section">
+
+        <div class="section-title">
+            <h2>🎥 Cricket Shorts</h2>
+        </div>
+
+        <div class="shorts-container">
+
+            <div class="short-card" onclick="openShort('Best Six 🔥')">
+                <div class="short-image">🏏💥</div>
+                <h3>Best Six 🔥</h3>
+                <p>Watch cricket highlights</p>
+            </div>
+
+            <div class="short-card" onclick="openShort('Amazing Catch 😱')">
+                <div class="short-image">🙌🏏</div>
+                <h3>Amazing Catch 😱</h3>
+                <p>Crazy cricket moments</p>
+            </div>
+
+            <div class="short-card" onclick="openShort('Fast Bowling ⚡')">
+                <div class="short-image">⚡🏏</div>
+                <h3>Fast Bowling ⚡</h3>
+                <p>Fastest cricket moments</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Matches -->
+    <section id="matches" class="section">
+
+        <div class="section-title">
+            <h2>🏆 Matches</h2>
+        </div>
+
+        <div class="match-list">
+
+            <div class="simple-match">
+                <span>🇮🇳 India</span>
+                <strong>VS</strong>
+                <span>🇦🇺 Australia</span>
+            </div>
+
+            <div class="simple-match">
+                <span>🇬🇧 England</span>
+                <strong>VS</strong>
+                <span>🇿🇦 South Africa</span>
+            </div>
+
+            <div class="simple-match">
+                <span>🇵🇰 Pakistan</span>
+                <strong>VS</strong>
+                <span>🇳🇿 New Zealand</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>🏏 Cricket Tube</h3>
+        <p>Live Cricket • Shorts • Scores</p>
+        <p>© 2026 Cricket Tube</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
